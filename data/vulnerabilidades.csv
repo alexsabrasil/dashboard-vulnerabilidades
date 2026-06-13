@@ -1,0 +1,11 @@
+id,ativo,sistema,severidade,cvss,status,mes
+1,Servidor Web 01,Linux,Crítica,9.8,Pendente,Janeiro
+2,Servidor Banco 01,PostgreSQL,Alta,8.1,Em tratamento,Janeiro
+3,Notebook RH 03,Windows,Média,5.6,Corrigida,Fevereiro
+4,Firewall Borda,Firewall,Alta,7.9,Pendente,Fevereiro
+5,Servidor Aplicação 02,Linux,Crítica,9.1,Em tratamento,Março
+6,Notebook Financeiro 02,Windows,Baixa,3.2,Corrigida,Março
+7,Servidor Backup,Windows,Alta,8.5,Pendente,Abril
+8,Servidor Web 02,Linux,Média,6.4,Corrigida,Abril
+9,Switch Core,Rede,Crítica,9.3,Pendente,Maio
+10,Servidor AD,Windows,Alta,8.7,Em tratamento,Maio
