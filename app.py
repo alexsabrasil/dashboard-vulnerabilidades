@@ -16,7 +16,7 @@ df["dias_correcao"] = (df["data_correcao"] - df["data_descoberta"]).dt.days
 
 pagina = st.sidebar.radio(
     "Menu",
-    ["Dashboard", "Sobre o Projeto"]
+    ["Sobre o Projeto", "Dashboard"]
 )
 
 st.sidebar.title("Filtros")
@@ -217,3 +217,26 @@ else:
         - GitHub
         """
     )
+    
+    st.subheader("Objetivos do Projeto")
+
+st.write("""
+• Demonstrar conhecimentos em Gestão de Vulnerabilidades.
+• Aplicar conceitos de Blue Team.
+• Construir indicadores de segurança.
+• Praticar análise de riscos utilizando CVSS.
+• Desenvolver dashboards interativos com Python.
+""")
+
+st.markdown("---")
+
+st.markdown(
+    """
+    <div style='text-align:center; color:#808080; font-size:13px;'>
+    © 2026 Alê Tavares | Dashboard de Vulnerabilidades<br>
+    Desenvolvido com Python, Streamlit e Plotly para fins de estudo, demonstração técnica e portfólio profissional.
+    Contato: <a href='https://www.linkedin.com/in/aletavaress/' target='_blank'>LinkedIn</a> | <a href='@alemdoslogs' target='_blank'>Instagram</a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
