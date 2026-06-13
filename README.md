@@ -1,5 +1,7 @@
 # Dashboard de Vulnerabilidades
 
+![Dashboard](images/dashboard-vulnerabilidades.png)
+
 ## Sobre o Projeto
 
 Dashboard desenvolvido para monitoramento e análise de vulnerabilidades em ambientes corporativos, com foco em Segurança da Informação, Blue Team e Gestão de Vulnerabilidades.
@@ -62,7 +64,7 @@ dashboard-vulnerabilidades/
 
 ## Autora
 
-Alexsandra Tavares Sabino da Silva
+Alê Tavares 
 
 LinkedIn:
 https://www.linkedin.com/in/aletavaress
