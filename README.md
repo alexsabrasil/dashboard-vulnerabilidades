@@ -2,7 +2,7 @@
 ![Dashboard](images/dashboard-vulnerabilidades.png)
 ![Dashboard](images/dashboard-vulnerabilidades2.png)
 ![Dashboard](images/dashboard-vulnerabilidades3.png)
-![Dashboard](images/dashboard-vulnerabilidades4.png)
+![Dashboard](images/dashboard-vulnerabilidades5.png)
 
 ## Sobre o Projeto
 

@@ -177,6 +177,15 @@ if pagina == "Dashboard":
     st.subheader("Base de Vulnerabilidades")
     st.dataframe(df_filtrado, use_container_width=True)
 
+    csv = df_filtrado.to_csv(index=False).encode("utf-8")
+
+    st.download_button(
+    label="📥 Baixar relatório em CSV",
+    data=csv,
+    file_name="relatorio_vulnerabilidades.csv",
+    mime="text/csv"
+)
+
 else:
     st.title("Sobre o Projeto")
 
@@ -220,7 +229,7 @@ else:
     
     st.subheader("Objetivos do Projeto")
 
-st.write("""
+    st.write("""
 • Demonstrar conhecimentos em Gestão de Vulnerabilidades.
 • Aplicar conceitos de Blue Team.
 • Construir indicadores de segurança.
@@ -228,9 +237,9 @@ st.write("""
 • Desenvolver dashboards interativos com Python.
 """)
 
-st.markdown("---")
+    st.markdown("---")
 
-st.markdown(
+    st.markdown(
     """
     <div style='text-align:center; color:#808080; font-size:13px;'>
     © 2026 Alê Tavares | Dashboard de Vulnerabilidades<br>
