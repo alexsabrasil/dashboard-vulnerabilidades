@@ -1,11 +1,21 @@
-id,ativo,sistema,severidade,cvss,status,mes
-1,Servidor Web 01,Linux,Crítica,9.8,Pendente,Janeiro
-2,Servidor Banco 01,PostgreSQL,Alta,8.1,Em tratamento,Janeiro
-3,Notebook RH 03,Windows,Média,5.6,Corrigida,Fevereiro
-4,Firewall Borda,Firewall,Alta,7.9,Pendente,Fevereiro
-5,Servidor Aplicação 02,Linux,Crítica,9.1,Em tratamento,Março
-6,Notebook Financeiro 02,Windows,Baixa,3.2,Corrigida,Março
-7,Servidor Backup,Windows,Alta,8.5,Pendente,Abril
-8,Servidor Web 02,Linux,Média,6.4,Corrigida,Abril
-9,Switch Core,Rede,Crítica,9.3,Pendente,Maio
-10,Servidor AD,Windows,Alta,8.7,Em tratamento,Maio
+id,cve,ativo,sistema,severidade,cvss,status,responsavel,data_descoberta,data_correcao
+1,CVE-2024-1001,Servidor Web 01,Linux,Crítica,9.8,Pendente,Infraestrutura,2026-01-05,
+2,CVE-2024-1002,Servidor Banco 01,PostgreSQL,Alta,8.1,Em tratamento,DBA,2026-01-08,
+3,CVE-2024-1003,Notebook RH 03,Windows,Média,5.6,Corrigida,Suporte,2026-01-10,2026-01-18
+4,CVE-2024-1004,Firewall Borda,Firewall,Alta,7.9,Pendente,Segurança,2026-01-12,
+5,CVE-2024-1005,Servidor Aplicação 02,Linux,Crítica,9.1,Em tratamento,Infraestrutura,2026-01-15,
+6,CVE-2024-1006,Notebook Financeiro 02,Windows,Baixa,3.2,Corrigida,Suporte,2026-01-20,2026-01-22
+7,CVE-2024-1007,Servidor Backup,Windows,Alta,8.5,Pendente,Infraestrutura,2026-02-02,
+8,CVE-2024-1008,Servidor Web 02,Linux,Média,6.4,Corrigida,Infraestrutura,2026-02-05,2026-02-14
+9,CVE-2024-1009,Switch Core,Rede,Crítica,9.3,Pendente,Redes,2026-02-09,
+10,CVE-2024-1010,Servidor AD,Windows,Alta,8.7,Em tratamento,Segurança,2026-02-12,
+11,CVE-2024-1011,Servidor Web 03,Linux,Alta,8.0,Corrigida,Infraestrutura,2026-02-18,2026-02-25
+12,CVE-2024-1012,API Pagamentos,Linux,Crítica,9.6,Pendente,Desenvolvimento,2026-03-01,
+13,CVE-2024-1013,Servidor Logs,Linux,Média,5.9,Em tratamento,Segurança,2026-03-04,
+14,CVE-2024-1014,Notebook Diretoria,Windows,Alta,7.8,Pendente,Suporte,2026-03-06,
+15,CVE-2024-1015,Servidor Arquivos,Windows,Baixa,3.9,Corrigida,Infraestrutura,2026-03-10,2026-03-15
+16,CVE-2024-1016,Aplicação RH,Linux,Média,6.2,Corrigida,Desenvolvimento,2026-03-14,2026-03-28
+17,CVE-2024-1017,Servidor Proxy,Linux,Alta,8.3,Em tratamento,Redes,2026-04-02,
+18,CVE-2024-1018,Banco BI,PostgreSQL,Crítica,9.4,Pendente,DBA,2026-04-07,
+19,CVE-2024-1019,Servidor VPN,Linux,Alta,8.6,Pendente,Redes,2026-04-12,
+20,CVE-2024-1020,Aplicação Interna,Linux,Média,5.5,Corrigida,Desenvolvimento,2026-04-20,2026-05-01
