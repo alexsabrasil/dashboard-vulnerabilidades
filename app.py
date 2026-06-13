@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from datetime import datetime
 
 st.set_page_config(
     page_title="Dashboard de Vulnerabilidades",
@@ -31,6 +32,19 @@ df["dias_correcao"] = (df["data_correcao"] - df["data_descoberta"]).dt.days
 
 mttr = round(df["dias_correcao"].mean(), 1)
 corrigidas = len(df[df["status"] == "Corrigida"])
+
+hoje = pd.Timestamp.now()
+
+criticas_pendentes = df[
+    (df["severidade"] == "Crítica") &
+    (df["status"] != "Corrigida")
+]
+
+fora_sla = len(
+    criticas_pendentes[
+        (hoje - criticas_pendentes["data_descoberta"]).dt.days > 15
+    ]
+)
 
 st.sidebar.title("Filtros")
 
@@ -70,7 +84,7 @@ criticas = len(df_filtrado[df_filtrado["severidade"] == "Crítica"])
 altas = len(df_filtrado[df_filtrado["severidade"] == "Alta"])
 pendentes = len(df_filtrado[df_filtrado["status"] == "Pendente"])
 
-col1, col2, col3, col4, col5, col6 = st.columns(6)
+col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
 
 col1.metric("Total", total)
 col2.metric("Críticas", criticas)
@@ -78,6 +92,7 @@ col3.metric("Altas", altas)
 col4.metric("Pendentes", pendentes)
 col5.metric("Corrigidas", corrigidas)
 col6.metric("MTTR Médio", f"{mttr} dias")
+col7.metric("Fora de SLA", fora_sla)
 
 st.divider()
 
@@ -116,6 +131,7 @@ with coluna3:
     grafico_responsavel = px.histogram(
         df_filtrado,
         x="responsavel",
+        color="severidade",
         title="Vulnerabilidades por Responsável"
     )
     st.plotly_chart(grafico_responsavel, use_container_width=True)
@@ -124,6 +140,7 @@ with coluna4:
     grafico_ativos = px.histogram(
         df_filtrado,
         x="ativo",
+        color="severidade",
         title="Top Ativos com Vulnerabilidades"
     )
     st.plotly_chart(grafico_ativos, use_container_width=True)

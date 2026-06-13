@@ -19,3 +19,10 @@ id,cve,ativo,sistema,severidade,cvss,status,responsavel,data_descoberta,data_cor
 18,CVE-2024-1018,Banco BI,PostgreSQL,Crítica,9.4,Pendente,DBA,2026-04-07,
 19,CVE-2024-1019,Servidor VPN,Linux,Alta,8.6,Pendente,Redes,2026-04-12,
 20,CVE-2024-1020,Aplicação Interna,Linux,Média,5.5,Corrigida,Desenvolvimento,2026-04-20,2026-05-01
+21,CVE-2024-1021,Servidor Web 01,Linux,Alta,8.4,Pendente,Infraestrutura,2026-05-01,
+22,CVE-2024-1022,Servidor Web 01,Linux,Média,5.8,Em tratamento,Infraestrutura,2026-05-03,
+23,CVE-2024-1023,Servidor Web 01,Linux,Crítica,9.5,Pendente,Infraestrutura,2026-05-05,
+24,CVE-2024-1024,Servidor AD,Windows,Alta,8.2,Pendente,Segurança,2026-05-08,
+25,CVE-2024-1025,Servidor AD,Windows,Crítica,9.1,Em tratamento,Segurança,2026-05-10,
+26,CVE-2024-1026,Firewall Borda,Firewall,Alta,8.0,Pendente,Redes,2026-05-12,
+27,CVE-2024-1027,Firewall Borda,Firewall,Média,5.7,Corrigida,Redes,2026-05-15,2026-05-18
