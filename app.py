@@ -16,10 +16,36 @@ st.write(
 
 df = pd.read_csv("data/vulnerabilidades.csv")
 
-total = len(df)
-criticas = len(df[df["severidade"] == "Crítica"])
-altas = len(df[df["severidade"] == "Alta"])
-pendentes = len(df[df["status"] == "Pendente"])
+st.sidebar.title("Filtros")
+
+filtro_severidade = st.sidebar.multiselect(
+    "Severidade",
+    options=df["severidade"].unique(),
+    default=df["severidade"].unique()
+)
+
+filtro_status = st.sidebar.multiselect(
+    "Status",
+    options=df["status"].unique(),
+    default=df["status"].unique()
+)
+
+filtro_sistema = st.sidebar.multiselect(
+    "Sistema",
+    options=df["sistema"].unique(),
+    default=df["sistema"].unique()
+)
+
+df_filtrado = df[
+    (df["severidade"].isin(filtro_severidade)) &
+    (df["status"].isin(filtro_status)) &
+    (df["sistema"].isin(filtro_sistema))
+]
+
+total = len(df_filtrado)
+criticas = len(df_filtrado[df_filtrado["severidade"] == "Crítica"])
+altas = len(df_filtrado[df_filtrado["severidade"] == "Alta"])
+pendentes = len(df_filtrado[df_filtrado["status"] == "Pendente"])
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -60,4 +86,4 @@ grafico_cvss = px.scatter(
 st.plotly_chart(grafico_cvss, use_container_width=True)
 
 st.subheader("Base de Vulnerabilidades")
-st.dataframe(df, use_container_width=True)
+st.dataframe(df_filtrado, use_container_width=True)
