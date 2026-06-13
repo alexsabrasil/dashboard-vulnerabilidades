@@ -8,7 +8,15 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🛡️ Dashboard de Vulnerabilidades")
+st.markdown(
+    """
+    <h1 style='text-align:center;'>
+    🛡️ Dashboard de Vulnerabilidades
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+
 st.write(
     "Projeto autoral com dados fictícios para análise de riscos, "
     "priorização e acompanhamento de vulnerabilidades em um contexto de Blue Team."
@@ -44,10 +52,17 @@ filtro_sistema = st.sidebar.multiselect(
     default=df["sistema"].unique()
 )
 
+filtro_responsavel = st.sidebar.multiselect(
+    "Responsável",
+    options=df["responsavel"].unique(),
+    default=df["responsavel"].unique()
+)
+
 df_filtrado = df[
     (df["severidade"].isin(filtro_severidade)) &
     (df["status"].isin(filtro_status)) &
-    (df["sistema"].isin(filtro_sistema))
+    (df["sistema"].isin(filtro_sistema)) &
+    (df["responsavel"].isin(filtro_responsavel))
 ]
 
 total = len(df_filtrado)
