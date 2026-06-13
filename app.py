@@ -16,6 +16,14 @@ st.write(
 
 df = pd.read_csv("data/vulnerabilidades.csv")
 
+df["data_descoberta"] = pd.to_datetime(df["data_descoberta"])
+df["data_correcao"] = pd.to_datetime(df["data_correcao"], errors="coerce")
+
+df["dias_correcao"] = (df["data_correcao"] - df["data_descoberta"]).dt.days
+
+mttr = round(df["dias_correcao"].mean(), 1)
+corrigidas = len(df[df["status"] == "Corrigida"])
+
 st.sidebar.title("Filtros")
 
 filtro_severidade = st.sidebar.multiselect(
@@ -47,12 +55,14 @@ criticas = len(df_filtrado[df_filtrado["severidade"] == "Crítica"])
 altas = len(df_filtrado[df_filtrado["severidade"] == "Alta"])
 pendentes = len(df_filtrado[df_filtrado["status"] == "Pendente"])
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4, col5, col6 = st.columns(6)
 
 col1.metric("Total", total)
 col2.metric("Críticas", criticas)
 col3.metric("Altas", altas)
 col4.metric("Pendentes", pendentes)
+col5.metric("Corrigidas", corrigidas)
+col6.metric("MTTR Médio", f"{mttr} dias")
 
 st.divider()
 
