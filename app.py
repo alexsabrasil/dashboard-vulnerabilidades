@@ -93,6 +93,26 @@ grafico_cvss = px.scatter(
     title="Pontuação CVSS por Ativo"
 )
 
+st.divider()
+
+coluna3, coluna4 = st.columns(2)
+
+with coluna3:
+    grafico_responsavel = px.histogram(
+        df_filtrado,
+        x="responsavel",
+        title="Vulnerabilidades por Responsável"
+    )
+    st.plotly_chart(grafico_responsavel, use_container_width=True)
+
+with coluna4:
+    grafico_ativos = px.histogram(
+        df_filtrado,
+        x="ativo",
+        title="Top Ativos com Vulnerabilidades"
+    )
+    st.plotly_chart(grafico_ativos, use_container_width=True)
+
 st.plotly_chart(grafico_cvss, use_container_width=True)
 
 st.subheader("Base de Vulnerabilidades")
